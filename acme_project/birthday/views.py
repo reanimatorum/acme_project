@@ -21,6 +21,15 @@ class BirthdayCreateView(BirthdayMixin, BirthdayFormMixin, CreateView):
     pass
 
 
+class BirthdayListView(ListView):
+    # Указываем модель, с которой работает CBV...
+    model = Birthday
+    # ...сортировку, которая будет применена при выводе списка объектов:
+    ordering = 'id'
+    # ...и даже настройки пагинации:
+    paginate_by = 10
+    
+
 class BirthdayUpdateView(BirthdayMixin, BirthdayFormMixin, UpdateView):
     pass
 

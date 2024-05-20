@@ -1,5 +1,7 @@
 from django.core.paginator import Paginator
-from django.views.generic import CreateView, DeleteView, ListView, UpdateView
+from django.views.generic import (
+    CreateView, DeleteView, DetailView, ListView, UpdateView
+)
 from django.urls import reverse_lazy
 
 
@@ -28,7 +30,11 @@ class BirthdayListView(ListView):
     ordering = 'id'
     # ...и даже настройки пагинации:
     paginate_by = 10
-    
+
+
+class BirthdayDetailView(DetailView):
+    pass
+
 
 class BirthdayUpdateView(BirthdayMixin, BirthdayFormMixin, UpdateView):
     pass

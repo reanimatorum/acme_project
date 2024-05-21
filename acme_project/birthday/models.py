@@ -17,10 +17,10 @@ class Birthday(models.Model):
         constraints = (
             models.UniqueConstraint(
                 fields=('first_name', 'last_name', 'birthday'),
-                name='Unique person constraint',
+                name='Unique person constraint'
             ),
         )
 
-        def get_absolute_url(self):
-            # С помощью функции reverse() возвращаем URL объекта.
-            return reverse('birthday:detail', kwargs={'pk': self.pk}) 
+    def get_absolute_url(self):
+        # С помощью функции reverse() возвращаем URL объекта.
+        return reverse('birthday:detail', kwargs={'pk': self.pk})

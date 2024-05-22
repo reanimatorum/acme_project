@@ -32,4 +32,4 @@ class BirthdayForm(forms.ModelForm):
         if f'{first_name} {last_name}' in BEATLES:
             raise ValidationError(
                 'Мы тоже любим Битлз, но введите, пожалуйста, настоящее имя!'
-            ) 
+            )
